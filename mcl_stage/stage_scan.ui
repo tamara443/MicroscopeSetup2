@@ -1,0 +1,955 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="MinimumExpanding" vsizetype="Ignored">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+    <size>
+     <width>750</width>
+     <height>820</height>
+    </size>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout_3">
+    <item>
+     <widget class="QGroupBox" name="groupBox">
+      <property name="title">
+       <string>Settings</string>
+      </property>
+      <property name="flat">
+       <bool>true</bool>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_2">
+       <item row="0" column="1">
+        <layout class="QGridLayout" name="gridLayout_9">
+
+         <item row="0" column="1">
+          <widget class="QGroupBox" name="groupBox_random_int">
+           <property name="title">
+            <string>LIA Settings</string>
+           </property>
+            <layout class="QGridLayout" name="gridLayout_2">
+             <item row="0" column="0" colspan="2">
+              <widget class="QPushButton" name="set_auto_sensitivity">
+               <property name="text">
+                <string>Auto Sensitivity</string>
+               </property>
+               <property name="toolTip">
+                <string>
+        If you want to use auto sensitivity value, make sure sensitivity value below is zero.
+        Recommended order for setting auto values: 1. Auto Sensitivity, 2. Auto Phase
+                </string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0">
+              <widget class="QLabel" name="label_sensitivity">
+               <property name="text">
+                <string>Sensitivity:</string>
+               </property>
+               <property name="toolTip">
+                <string>
+        When in voltage measurement mode, valid values are discrete values from 2 nV to 1 V.
+        When in current measurement mode, valid values are discrete values from 2 fA to 1 µA (for normal current mode)
+        or up to 10 nA (for low noise current mode).
+                </string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1">
+              <widget class="QLineEdit" name="sensitivity_doubleSpinBox"/>
+             </item>
+             <item row="2" column="0" colspan="2">
+              <widget class="QPushButton" name="set_auto_phase">
+               <property name="text">
+                <string>Auto Phase</string>
+               </property>
+               <property name="toolTip">
+                <string>If you want to use auto phase value, make sure phase value below is zero.</string>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="0">
+              <widget class="QLabel" name="label_phase">
+               <property name="text">
+                <string>Phase:</string>
+               </property>
+               <property name="toolTip">
+                <string>Valid values are floating point numbers between 0 - 360 degrees.</string>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="1">
+              <widget class="QDoubleSpinBox" name="phase_doubleSpinBox"/>
+             </item>
+             <item row="4" column="0">
+              <widget class="QLabel" name="label_auto_gain">
+               <property name="text">
+                <string>Auto Gain</string>
+               </property>
+               <property name="toolTip">
+                <string>If you are using Auto Gain, make sure gain value below is zero.</string>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="1">
+              <widget class="QComboBox" name="set_auto_gain">
+               <item>
+                <property name="text">
+                 <string>ON</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>OFF</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+             <item row="5" column="0">
+              <widget class="QLabel" name="gain_label">
+               <property name="text">
+                <string>AC gain(dB):</string>
+               </property>
+              </widget>
+             </item>
+             <item row="5" column="1">
+              <widget class="QDoubleSpinBox" name="gain_doubleSpinBox"/>
+             </item>
+             <item row="6" column="0">
+              <widget class="QLabel" name="imode_label">
+               <property name="text">
+                <string>Mode:</string>
+               </property>
+              </widget>
+             </item>
+             <item row="6" column="1">
+              <widget class="QComboBox" name="imode_comboBox">
+               <item>
+                <property name="text">
+                 <string>voltage mode</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>``current mode</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>low noise current mode</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+             <item row="7" column="0">
+              <widget class="QLabel" name="imode_label">
+               <property name="text">
+                <string>Reference Mode:</string>
+               </property>
+              </widget>
+             </item>
+             <item row="7" column="1">
+              <widget class="QComboBox" name="reference_comboBox">
+               <item>
+                <property name="text">
+                 <string>internal</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>external rear</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>external front</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+             <item row="8" column="0">
+              <widget class="QLabel" name="coupling_label">
+               <property name="text">
+                <string>Coupling:</string>
+               </property>
+              </widget>
+             </item>
+             <item row="8" column="1">
+              <widget class="QComboBox" name="coupling_comboBox">
+               <item>
+                <property name="text">
+                 <string>AC</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>DC</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+             <item row="9" column="0">
+              <widget class="QLabel" name="wait_time_label">
+               <property name="text">
+                <string>Wait Time: </string>
+               </property>
+              </widget>
+             </item>
+             <item row="9" column="1">
+              <widget class="QDoubleSpinBox" name="wait_time_doubleSpinBox"/>
+             </item>
+            </layout>
+          </widget>
+         </item>
+
+         <item row="1" column="1">
+          <widget class="QGroupBox" name="groupBox_3">
+           <property name="title">
+            <string>Run</string>
+           </property>
+           <layout class="QGridLayout" name="gridLayout_4">
+            <item row="1" column="0">
+             <widget class="QLabel" name="estimated_scan_time_label">
+              <property name="text">
+               <string>Estimated scan time: 0s</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0" colspan="2">
+             <widget class="QLabel" name="estimated_time_label">
+              <property name="text">
+               <string>Estimated time remaining: 0s</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="0">
+             <widget class="QPushButton" name="start_scan_pushButton">
+              <property name="font">
+               <font>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>Start scan</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QPushButton" name="interrupt_scan_pushButton">
+              <property name="font">
+               <font>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>Interrupt scan</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="0" colspan="2">
+             <widget class="QProgressBar" name="progressBar">
+              <property name="layoutDirection">
+               <enum>Qt::LeftToRight</enum>
+              </property>
+              <property name="value">
+               <number>0</number>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+
+         <item row="3" column="0">
+          <widget class="QGroupBox" name="groupBox_2">
+           <property name="title">
+            <string>Move stage to selected position</string>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_2">
+            <item>
+             <widget class="QCheckBox" name="save_positions_checkBox">
+              <property name="maximumSize">
+               <size>
+                <width>583</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>Save positions</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <layout class="QGridLayout" name="gridLayout">
+              <item row="1" column="0">
+               <widget class="QLabel" name="label_11">
+                <property name="text">
+                 <string>Selected y</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="0">
+               <widget class="QLabel" name="label_10">
+                <property name="text">
+                 <string>Selected x</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="1">
+               <widget class="QDoubleSpinBox" name="x_clicked_doubleSpinBox"/>
+              </item>
+              <item row="1" column="1">
+               <widget class="QDoubleSpinBox" name="y_clicked_doubleSpinBox"/>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <widget class="QCheckBox" name="lock_position_checkBox">
+              <property name="text">
+               <string>Lock position</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="export_positions_pushButton">
+              <property name="text">
+               <string>Export positions</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="move_to_selected_pushButton">
+              <property name="text">
+               <string>Move</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item row="0" column="0">
+          <layout class="QGridLayout" name="horizontalLayout_2">
+
+           <item row = "0" column = "0">
+            <widget class="QGroupBox" name="groupBox_4">
+             <property name="title">
+              <string>Current position</string>
+             </property>
+             <layout class="QGridLayout" name="gridLayout_7">
+              <item row="0" column="0">
+               <layout class="QFormLayout" name="formLayout">
+                <item row="0" column="0">
+                 <widget class="QLabel" name="label">
+                  <property name="font">
+                   <font>
+                    <pointsize>8</pointsize>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>X</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="1">
+                 <widget class="QDoubleSpinBox" name="x_pos_doubleSpinBox">
+                  <property name="maximumSize">
+                   <size>
+                    <width>200</width>
+                    <height>16777215</height>
+                   </size>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <pointsize>8</pointsize>
+                   </font>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="0">
+                 <widget class="QLabel" name="label_2">
+                  <property name="font">
+                   <font>
+                    <pointsize>8</pointsize>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>Y</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="1">
+                 <widget class="QDoubleSpinBox" name="y_pos_doubleSpinBox">
+                  <property name="maximumSize">
+                   <size>
+                    <width>200</width>
+                    <height>16777215</height>
+                   </size>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <pointsize>8</pointsize>
+                   </font>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="0" colspan="2">
+                 <widget class="QPushButton" name="zeroStage_pushButton">
+                  <property name="text">
+                   <string>Return Stage to (0, 0)</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </widget>
+           </item>
+
+           <item row = "1" column = "0">
+            <widget class="QGroupBox" name="groupBox_10">
+               <property name="title">
+                <string>Chopper Settings</string>
+               </property>
+              <layout class="QGridLayout" name="gridLayout_10">
+                <item row="0" column="1">
+                 <widget class="QDoubleSpinBox" name="frequency_doubleSpinBox"/>
+                </item>
+                <item row="0" column="0">
+                 <widget class="QLabel" name="frequency_label">
+                  <property name="text">
+                   <string>Frequency: </string>
+                  </property>
+                 </widget>
+                </item>
+                <item row = "1" column ="0">
+                   <widget class="QLabel" name="blade_style_label">
+                    <property name="text">
+                       <string>Blade Style: </string>
+                    </property>
+                    <property name="toolTip">
+                       <string>MC1F10HP: 20Hz-10kHz | MC1F2: 4Hz-200Hz</string>
+                    </property>
+                   </widget>
+                </item>
+                <item row= "1" column = "1">
+                   <widget class="QComboBox" name="bladeType_comboBox">
+                    <item>
+                       <property name="text">
+                          <string>MC1F10HP</string>
+                       </property>
+                    </item>
+                    <item>
+                       <property name="text">
+                          <string>MC1F2</string>
+                       </property>
+                    </item>
+                   </widget>
+                </item>
+                <item row = "2" column ="0">
+                   <widget class="QLabel" name="chopper_status_label">
+                    <property name="text">
+                       <string>Chopper Status: </string>
+                    </property>
+                   </widget>
+                </item>
+                <item row= "2" column = "1">
+                   <widget class="QComboBox" name="chopper_on_off_comboBox">
+                    <item>
+                       <property name="text">
+                          <string>ON</string>
+                       </property>
+                    </item>
+                    <item>
+                       <property name="text">
+                          <string>OFF</string>
+                       </property>
+                    </item>
+                   </widget>
+                </item>
+                <item row = "3" column ="0">
+                   <widget class="QLabel" name="get_Frequency_label">
+                    <property name="text">
+                       <string>Get Frequency: </string>
+                    </property>
+                   </widget>
+                </item>
+                <item row = "3" column ="1">
+                   <widget class="QLabel" name="get_Frequency_Text">
+                    <property name="text">
+                     <string></string>
+                    </property>
+                   </widget>
+                </item>
+              </layout>
+            </widget>
+           </item>
+
+           <item row ="0" column = "1" rowspan="2">
+            <widget class="QGroupBox" name="details_groupBox">
+             <property name="title">
+              <string>Details</string>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout">
+              <item>
+               <widget class="QPushButton" name="save_image_pushButton">
+                <property name="text">
+                 <string>Save intensities image</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="save_array_pushButton">
+                <property name="text">
+                 <string>Save intensities array</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_16">
+                <property name="text">
+                 <string>Activate Current Measurement:</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QCheckBox" name="photocurrent_checkBox">
+                <property name="text">
+                 <string>Measure Photocurrent</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QComboBox" name="photocurrent_comboBox">
+                <item>
+                 <property name="text">
+                  <string>LIA7265</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>KeysightB2902A</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+
+          </layout>
+         </item>
+         <item row="2" column="1" rowspan="2" colspan="1">
+          <widget class="QGroupBox" name="stage_groupBox">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+             <horstretch>1</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="title">
+            <string>Stage</string>
+           </property>
+           <layout class="QGridLayout" name="gridLayout_8"/>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QGroupBox" name="groupBox_6">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>583</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="title">
+            <string>Scan settings</string>
+           </property>
+           <layout class="QGridLayout" name="gridLayout_6">
+            <item row="1" column="0" colspan="2">
+             <layout class="QGridLayout" name="gridLayout_3">
+              <item row="1" column="5">
+               <widget class="QDoubleSpinBox" name="y_step_doubleSpinBox">
+                <property name="font">
+                 <font>
+                  <pointsize>8</pointsize>
+                 </font>
+                </property>
+                <property name="value">
+                 <double>0.100000000000000</double>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="4" alignment="Qt::AlignRight">
+               <widget class="QLabel" name="label_6">
+                <property name="font">
+                 <font>
+                  <pointsize>8</pointsize>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>X Step (um)</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="1">
+               <widget class="QDoubleSpinBox" name="x_start_doubleSpinBox">
+                <property name="font">
+                 <font>
+                  <pointsize>8</pointsize>
+                 </font>
+                </property>
+                <property name="maximum">
+                 <double>100.000000000000000</double>
+                </property>
+                <property name="value">
+                 <double>50.000000000000000</double>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="1">
+               <widget class="QDoubleSpinBox" name="y_start_doubleSpinBox">
+                <property name="font">
+                 <font>
+                  <pointsize>8</pointsize>
+                 </font>
+                </property>
+                <property name="maximum">
+                 <double>100.000000000000000</double>
+                </property>
+                <property name="value">
+                 <double>50.000000000000000</double>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="0" alignment="Qt::AlignRight">
+               <widget class="QLabel" name="label_8">
+                <property name="font">
+                 <font>
+                  <pointsize>8</pointsize>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>Y Start (um)</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="2" alignment="Qt::AlignRight">
+               <widget class="QLabel" name="label_4">
+                <property name="font">
+                 <font>
+                  <pointsize>8</pointsize>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>Y Scan Size (um)</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="4" alignment="Qt::AlignRight">
+               <widget class="QLabel" name="label_7">
+                <property name="font">
+                 <font>
+                  <pointsize>8</pointsize>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>Y Step (um)</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="5">
+               <widget class="QDoubleSpinBox" name="x_step_doubleSpinBox">
+                <property name="font">
+                 <font>
+                  <pointsize>8</pointsize>
+                 </font>
+                </property>
+                <property name="singleStep">
+                 <double>1.000000000000000</double>
+                </property>
+                <property name="value">
+                 <double>0.100000000000000</double>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="3">
+               <widget class="QDoubleSpinBox" name="x_size_doubleSpinBox">
+                <property name="font">
+                 <font>
+                  <pointsize>8</pointsize>
+                 </font>
+                </property>
+                <property name="value">
+                 <double>5.000000000000000</double>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="3">
+               <widget class="QDoubleSpinBox" name="y_size_doubleSpinBox">
+                <property name="font">
+                 <font>
+                  <pointsize>8</pointsize>
+                 </font>
+                </property>
+                <property name="value">
+                 <double>5.000000000000000</double>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="0" alignment="Qt::AlignRight">
+               <widget class="QLabel" name="label_9">
+                <property name="font">
+                 <font>
+                  <pointsize>8</pointsize>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>X Start (um)</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="2" alignment="Qt::AlignRight">
+               <widget class="QLabel" name="label_5">
+                <property name="font">
+                 <font>
+                  <pointsize>8</pointsize>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>X Scan Size (um)</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item row="0" column="0">
+             <layout class="QHBoxLayout" name="horizontalLayout">
+              <item>
+               <widget class="QLabel" name="label_3">
+                <property name="text">
+                 <string>Scan direction</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QComboBox" name="scan_comboBox">
+                <item>
+                 <property name="text">
+                  <string>XY</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>YX</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+         </item>
+
+         <item row="1" column="0">
+          <widget class="QGroupBox" name="yokogawa_photocurrent_groupBox">
+           <property name="title">
+            <string>Yokogawa Setup</string>
+           </property>
+           <layout class="QGridLayout" name="gridlayout_photocurrent_setup">
+            <item row="0" column="0">
+             <widget class="QLabel" name="sourceLevel_label">
+              <property name="text">
+               <string>Source Level [V]</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+              <widget class="QDoubleSpinBox" name="sourceLevel_doubleSpinBox"/>
+            </item>
+            <item row="1" column="0">
+              <widget class="QLabel" name="sourceLimit_label">
+               <property name="text">
+                <string>Source Limit [V]</string>
+               </property>
+              </widget>
+             </item>
+            <item row="1" column="1">
+              <widget class="QDoubleSpinBox" name="sourceLimit_doubleSpinBox"/>
+            </item>
+            <item row="2" column="0">
+             <widget class="QLabel" name="sourceRange_label">
+              <property name="text">
+               <string>Source Range</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="1">
+             <widget class="QComboBox" name="sourceRange_comboBox">
+              <item>
+               <property name="text">
+                <string>1 mA</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>200 mA</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>10 mV/mA</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>100 mV/mA</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>1 V</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>10 V</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>30 V</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+            <item row="3" column="0">
+             <widget class="QLabel" name="Label_17">
+              <property name="text">
+               <string>Status</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="1">
+             <widget class="QComboBox" name="source_on_off_comboBox">
+              <item>
+               <property name="text">
+                <string>ON</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>OFF</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+
+           </layout>
+          </widget>
+         </item>
+
+         <item row="1" column="0">
+          <widget class="QGroupBox" name="keysight_photocurrent_groupBox">
+           <property name="title">
+            <string>Keysight Setup</string>
+           </property>
+           <layout class="QGridLayout" name="gridlayout_photocurrent_setup">
+            <item row="0" column="0">
+             <widget class="QLabel" name="label_13">
+              <property name="text">
+               <string>Source Level</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+              <widget class="QDoubleSpinBox" name="keysight_sourcelevel_dsb"/>
+             </item>
+            <item row="1" column="0">
+              <widget class="QLabel" name="label_12">
+               <property name="text">
+                <string>Source Range</string>
+               </property>
+              </widget>
+             </item>
+            <item row="1" column="1">
+             <widget class="QComboBox" name="keysight_sourcerange_combobox"/>
+            </item>
+            <item row="2" column="0">
+             <widget class="QLabel" name="measurement_range_label">
+              <property name="text">
+               <string>Measurement Range: </string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="1">
+             <widget class="QComboBox" name="measurement_range_comboBox"/>
+            </item>
+            <item row="3" column="0">
+             <widget class="QLabel" name="label_15">
+              <property name="text">
+               <string>Compliance: </string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="1">
+             <widget class="QComboBox" name="compliance_combobox"/>
+            </item>
+            <item row="4" column="0">
+             <widget class="QLabel" name="label_14">
+              <property name="text">
+               <string>Integration Time [ms]</string>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="1">
+             <widget class="QDoubleSpinBox" name="measIntg_doubleSpinBox"/>
+            </item>
+          </layout>
+          </widget>
+         </item>
+
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1131</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <tabstops>
+  <tabstop>x_start_doubleSpinBox</tabstop>
+  <tabstop>y_start_doubleSpinBox</tabstop>
+  <tabstop>x_size_doubleSpinBox</tabstop>
+  <tabstop>y_size_doubleSpinBox</tabstop>
+  <tabstop>x_step_doubleSpinBox</tabstop>
+  <tabstop>y_step_doubleSpinBox</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>

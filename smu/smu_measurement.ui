@@ -1,0 +1,512 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="MinimumExpanding" vsizetype="Ignored">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>807</width>
+    <height>732</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QGroupBox" name="groupBox">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>240</width>
+     <height>281</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Source (Yokogawa) Settings</string>
+   </property>
+   <widget class="QWidget" name="gridLayoutWidget_3">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>30</y>
+      <width>220</width>
+      <height>241</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="gridLayout_3">
+     <item row="1" column="0">
+      <widget class="QLabel" name="sourceMode_label">
+       <property name="text">
+        <string>Source Mode:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QComboBox" name="sourceMode_comboBox">
+       <item>
+        <property name="text">
+         <string>Voltage</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Current</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="sourceRange_label">
+       <property name="text">
+        <string>Source Range:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QComboBox" name="sourceRange_comboBox">
+       <property name="maxVisibleItems">
+        <number>10</number>
+       </property>
+       <item>
+        <property name="text">
+         <string>1 mA</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>200 mA</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>10 mV/mA</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>100 mV/mA</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>1 V</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>10 V</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>30 V</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item row="3" column="0">
+      <widget class="QLabel" name="setSource_label">
+       <property name="text">
+        <string>Set Source Level [V/A]:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="QDoubleSpinBox" name="setSource_doubleSpinBox"/>
+     </item>
+     <item row="4" column="0">
+      <widget class="QLabel" name="voltageLimit_label">
+       <property name="text">
+        <string>Source Limit Leve [A/V]l:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="1">
+      <widget class="QDoubleSpinBox" name="limitLevel_doubleSpinBox"/>
+     </item>
+     <item row="5" column="0">
+      <widget class="QLabel" name="on_off_label">
+       <property name="text">
+        <string>Source Status:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="1">
+      <widget class="QComboBox" name="source_on_off_comboBox1">
+       <item>
+        <property name="text">
+         <string>ON</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>OFF</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QGroupBox" name="groupBox_3">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>10</y>
+     <width>211</width>
+     <height>281</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>LIA Settings</string>
+   </property>
+   <widget class="QWidget" name="gridLayoutWidget_2">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>30</y>
+      <width>194</width>
+      <height>231</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="gridLayout_2">
+     <item row="0" column="0" colspan="2">
+      <widget class="QPushButton" name="set_auto_sensitivity">
+       <property name="text">
+        <string>Auto Sensitivity</string>
+       </property>
+       <property name="toolTip">
+        <string>
+If you want to use auto sensitivity value, make sure sensitivity value below is zero.
+Recommended order for setting auto values: 1. Auto Sensitivity, 2. Auto Phase
+        </string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="label_sensitivity">
+       <property name="text">
+        <string>Sensitivity:</string>
+       </property>
+       <property name="toolTip">
+        <string>
+When in voltage measurement mode, valid values are discrete values from 2 nV to 1 V.
+When in current measurement mode, valid values are discrete values from 2 fA to 1 µA (for normal current mode)
+or up to 10 nA (for low noise current mode).
+        </string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QLineEdit" name="sensitivity_doubleSpinBox"/>
+     </item>
+     <item row="2" column="0" colspan="2">
+      <widget class="QPushButton" name="set_auto_phase">
+       <property name="text">
+        <string>Auto Phase</string>
+       </property>
+       <property name="toolTip">
+        <string>If you want to use auto phase value, make sure phase value below is zero.</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0">
+      <widget class="QLabel" name="label_phase">
+       <property name="text">
+        <string>Phase:</string>
+       </property>
+       <property name="toolTip">
+        <string>Valid values are floating point numbers between 0 - 360 degrees.</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="QDoubleSpinBox" name="phase_doubleSpinBox"/>
+     </item>
+     <item row="4" column="0">
+      <widget class="QLabel" name="label_auto_gain">
+       <property name="text">
+        <string>Auto Gain</string>
+       </property>
+       <property name="toolTip">
+        <string>If you are using Auto Gain, make sure gain value below is zero.</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="1">
+      <widget class="QComboBox" name="set_auto_gain">
+       <item>
+        <property name="text">
+         <string>ON</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>OFF</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item row="5" column="0">
+      <widget class="QLabel" name="gain_label">
+       <property name="text">
+        <string>AC gain(dB):</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="1">
+      <widget class="QDoubleSpinBox" name="gain_doubleSpinBox"/>
+     </item>
+     <item row="6" column="0">
+      <widget class="QLabel" name="imode_label">
+       <property name="text">
+        <string>Mode:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="1">
+      <widget class="QComboBox" name="imode_comboBox">
+       <item>
+        <property name="text">
+         <string>voltage mode</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>``current mode</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>low noise current mode</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item row="7" column="0">
+      <widget class="QLabel" name="imode_label">
+       <property name="text">
+        <string>Reference Mode:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="7" column="1">
+      <widget class="QComboBox" name="reference_comboBox">
+       <item>
+        <property name="text">
+         <string>internal</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>external rear</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>external front</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item row="8" column="0">
+      <widget class="QLabel" name="coupling_label">
+       <property name="text">
+        <string>Coupling:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="1">
+      <widget class="QComboBox" name="coupling_comboBox">
+       <item>
+        <property name="text">
+         <string>AC</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>DC</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QGroupBox" name="plot_groupBox">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>300</y>
+     <width>700</width>
+     <height>411</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Plot</string>
+   </property>
+   <layout class="QHBoxLayout" name="verticalLayout_3">
+    <item>
+     <widget class="QPushButton" name="clear_graph_button">
+      <property name="text">
+       <string>Clear Graph</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QGroupBox" name="groupBox_4">
+   <property name="geometry">
+    <rect>
+     <x>480</x>
+     <y>10</y>
+     <width>260</width>
+     <height>150</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Chopper Settings</string>
+   </property>
+   <widget class="QWidget" name="gridLayoutWidget_4">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>30</y>
+      <width>240</width>
+      <height>100</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="gridLayout_4">
+     <item row="1" column="1">
+      <widget class="QDoubleSpinBox" name="frequency_doubleSpinBox"/>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="frequency_label">
+       <property name="text">
+        <string>Frequency: </string>
+       </property>
+      </widget>
+     </item>
+     <item row = "2" column ="0">
+        <widget class="QLabel" name="blade_style_label">
+         <property name="text">
+            <string>Blade Style: </string>
+         </property>
+         <property name="toolTip">
+            <string>MC1F10HP: 20Hz-10kHz | MC1F2: 4Hz-200Hz</string>
+         </property>
+        </widget>
+     </item>
+     <item row= "2" column = "1">
+        <widget class="QComboBox" name="bladeType_comboBox">
+         <item>
+            <property name="text">
+               <string>MC1F10HP</string>
+            </property>
+         </item>
+         <item>
+            <property name="text">
+               <string>MC1F2</string>
+            </property>
+         </item>
+        </widget>
+     </item>
+     <item row = "3" column ="0">
+        <widget class="QLabel" name="chopper_status_label">
+         <property name="text">
+            <string>Chopper Status: </string>
+         </property>
+        </widget>
+     </item>
+     <item row= "3" column = "1">
+        <widget class="QComboBox" name="chopper_on_off_comboBox">
+         <item>
+            <property name="text">
+               <string>ON</string>
+            </property>
+         </item>
+         <item>
+            <property name="text">
+               <string>OFF</string>
+            </property>
+         </item>
+        </widget>
+     </item>
+     <item row = "4" column ="0">
+        <widget class="QLabel" name="get_Frequency_label">
+         <property name="text">
+            <string>Get Frequency: </string>
+         </property>
+        </widget>
+     </item>
+     <item row = "4" column ="1">
+        <widget class="QLabel" name="get_Frequency_Text">
+         <property name="text">
+          <string></string>
+         </property>
+        </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QGroupBox">
+   <property name="geometry">
+    <rect>
+     <x>480</x>
+     <y>160</y>
+     <width>260</width>
+     <height>130</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Measurement</string>
+   </property>
+   <layout class="QGridLayout" name="gridLayout_4">
+    <item row="0" column="0">
+     <widget class="QLabel" name="label">
+      <property name="text">
+       <string>Measurement Time[s]:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QDoubleSpinBox" name="measurementTime_doubleSpinBox"/>
+    </item>
+    <item row="1" column="0">
+     <widget class="QLabel" name="label_2">
+      <property name="text">
+       <string>Measurement Interval[s]:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QDoubleSpinBox" name="measurementInterval_doubleSpinBox">
+     </widget>
+    </item>
+    <item row="3" column="0" colspan="2">
+     <widget class="QPushButton" name="start_Button">
+       <property name="text">
+        <string>START</string>
+       </property>
+     </widget>
+    </item>
+    <item row="4" column="0" colspan="2">
+     <widget class="QPushButton" name="interrupt_Button">
+       <property name="text">
+        <string>Interrupt</string>
+       </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
